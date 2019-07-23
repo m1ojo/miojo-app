@@ -13,9 +13,6 @@ In this app we are planning to use React for it's trustworthy and robust reputat
 Below are the central parts that bond it together:
 - Kickstarted with Create React App
 - React
-- Evergreen 
+- Semantic UI 
 
-We are also using:
-- Classnames
-- Flexboxgrid
 
