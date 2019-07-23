@@ -1,50 +1,82 @@
 import React from 'react';
 import styles from '../scss/SubmitCode.module.scss';
-import { SelectField, FormField, Button, TextInputField, FilePicker} from 'evergreen-ui';
+import { Dropdown, Button, Input} from 'semantic-ui-react';
 const classNames = require('classnames');
 
 export default class SubmitCode extends React.Component {
     render() {
         return(
             <div className={classNames(styles.container,'submit')} >
-                <FormField>
                     <div className="row">
                         <div className="col-xs-4">
-                            <SelectField
-                                label="Online Judge:"
-                                required
-                            >
-                                <option>CodeForces</option>
-                                <option>URI</option>
-                                <option>UVA</option>
-                            </SelectField>
+                            <Dropdown
+                                placeholder="Online Judge"
+                                selection
+                                options={
+                                    [
+                                        {
+                                            key: "1",
+                                            value: "cf",
+                                            text: "CodeForces"
+                                        },
+
+                                        {
+                                            key: "2",
+                                            value: "uri",
+                                            text: "URI"
+                                        },
+
+                                        {
+                                            key: "3",
+                                            value: "uva",
+                                            text: "UVA"
+                                        },
+                                    ]
+                                }   
+                            />
                         </div>
                         <div className="col-xs">
-                            <TextInputField 
+                            <Input 
                                 required
-                                label="Problem ID:"
+                                placeholder="Problem ID:"
                             />
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-xs">
-                            <SelectField
-                                label="Choose Problem's Language:"
-                                required
-                            >
-                                <option>C++</option>
-                                <option>Python 2</option>
-                                <option>Python 3</option>
-                            </SelectField>
+                            < Dropdown
+                                placeholder = "Online Judge"
+                                selection
+                                options = {
+                                [{
+                                        key: "1",
+                                        value: "cf",
+                                        text: "CodeForces"
+                                    },
+
+                                    {
+                                        key: "2",
+                                        value: "uri",
+                                        text: "URI"
+                                    },
+
+                                    {
+                                        key: "3",
+                                        value: "uva",
+                                        text: "UVA"
+                                    },
+                                ]
+                            }
+                            />
                         </div>
                     </div>
                     <div className="row">
-                        <FilePicker
+                        {/* <FilePicker
                             className="col-xs"
                             width={250}
                             marginBottom={32}
                             onChange={files => console.log(files)}
-                        />
+                        /> */}
                         <div 
                             className="col-xs"
                             style={{ textAlign: "right" }}
@@ -55,7 +87,6 @@ export default class SubmitCode extends React.Component {
                             >Submit</Button>
                         </div>
                     </div>
-                </FormField>
             </div>
         );
     }

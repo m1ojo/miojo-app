@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'flexboxgrid';
+import 'semantic-ui-css/semantic.min.css';
 // import App from './App';
 import SubmitCode from './components/SubmitCode';
 import * as serviceWorker from './serviceWorker';
